@@ -1,0 +1,68 @@
+% ------------------------------------------------------------------------
+% Ph.D. Thesis Defended on
+% ------------------------------------------------------------------------
+
+%--------------------------------------------------------------------------
+\input{tesis_style} % estilo Merse
+\input{macros.tex}
+%-------------------------------------------------------------------------
+\def\chaptername{Section}
+\usepackage{color,verbatim}
+%\nofiles %no genera el fichero toc, asi utilizo uno donde la num de la Bibliografia este correcta
+%\makeindex
+
+\begin{document}
+
+% ------PRELIMINARES ---------------------------------------------------------
+
+\pagestyle{empty}
+
+\input{Title}
+
+\cleardoublepage
+
+\frontmatter  % pone numeros romanos, etc.
+
+
+
+\pagestyle{fancy}
+
+\tableofcontents
+
+\cleardoublepage
+%---CAPITULOS ----------------------------------------------------------------
+
+\mainmatter  %pone numeros arabigos, etc.
+
+\def\chaptermark#1{\markboth{\thechapter.\ #1}{}}
+\def\sectionmark#1{\markright{\thesection.\ #1}}
+
+\graphicspath{{figs/}}
+
+\input{Intro}
+\input{Installation}
+\input{contPN}
+\input{simhpn}
+\input{case_studies}
+
+% --- BIBLIOGRAFIA -------------------------------------------------------
+
+%\backmatter
+%\pagestyle{fancy}
+
+%\input{RelevantPublications.bbl}%Fichero creado a mano desde Thesis.bbl
+
+%paginacion Bibliografia: modificar a mano Thesis.toc y compilar con \nofiles
+
+%\renewcommand{\bibname}{Bibliography}
+
+\bibliographystyle{alpha}
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{et}
+
+%-- INDICE DE TERMINOS ----------------------------------------------------
+
+%\addcontentsline{toc}{chapter}{\indexname}
+%\printindex
+
+\end{document}

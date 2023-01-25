@@ -1,0 +1,17 @@
+\BOOKMARK [0][-]{chapter.1}{Overview}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Installation Guide}{}% 2
+\BOOKMARK [0][-]{chapter.3}{Petri nets overview}{}% 3
+\BOOKMARK [1][-]{section.3.1}{Untimed Hybrid Petri net systems}{chapter.3}% 4
+\BOOKMARK [1][-]{section.3.2}{Timed Hybrid Petri net systems}{chapter.3}% 5
+\BOOKMARK [0][-]{chapter.4}{Using SimHPN}{}% 6
+\BOOKMARK [1][-]{section.4.1}{Short description of the GUI}{chapter.4}% 7
+\BOOKMARK [1][-]{section.4.2}{Script simulation}{chapter.4}% 8
+\BOOKMARK [0][-]{chapter.5}{Examples of utilization}{}% 9
+\BOOKMARK [1][-]{section.5.1}{An assembly line}{chapter.5}% 10
+\BOOKMARK [1][-]{section.5.2}{A traffic system}{chapter.5}% 11
+\BOOKMARK [1][-]{section.5.3}{A biochemical system}{chapter.5}% 12
+\BOOKMARK [1][-]{section.5.4}{Fault Diagnosis with continuous Petri nets}{chapter.5}% 13
+\BOOKMARK [2][-]{subsection.5.4.1}{Example 1}{section.5.4}% 14
+\BOOKMARK [2][-]{subsection.5.4.2}{Example 2: \(a manufacturing system\)}{section.5.4}% 15
+\BOOKMARK [2][-]{subsection.5.4.3}{Example 3: \(unobservable acyclic subnet\)}{section.5.4}% 16
+\BOOKMARK [0][-]{figure.5.8}{Bibliography}{}% 17

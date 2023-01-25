@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
+The top-level auxiliary file: SimHPNman.aux
+The style file: alpha.bst
+Database file #1: et.bib
+You've used 22 entries,
+            2543 wiz_defined-function locations,
+            726 strings with 8466 characters,
+and the built_in function-call counts, 10277 in all, are:
+= -- 1036
+> -- 526
+< -- 11
++ -- 183
+- -- 183
+* -- 775
+:= -- 1663
+add.period$ -- 70
+call.type$ -- 22
+change.case$ -- 146
+chr.to.int$ -- 22
+cite$ -- 22
+duplicate$ -- 404
+empty$ -- 733
+format.name$ -- 205
+if$ -- 2128
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 26
+newline$ -- 115
+num.names$ -- 70
+pop$ -- 151
+preamble$ -- 1
+purify$ -- 172
+quote$ -- 0
+skip$ -- 331
+stack$ -- 0
+substring$ -- 595
+swap$ -- 87
+text.length$ -- 11
+text.prefix$ -- 2
+top$ -- 0
+type$ -- 160
+warning$ -- 0
+while$ -- 104
+width$ -- 26
+write$ -- 296
