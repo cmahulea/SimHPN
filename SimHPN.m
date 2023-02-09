@@ -120,7 +120,11 @@ switch action
         b = uimenu(a,'Label','Optimal');
         uimenu(b,'Label','Optimal &Observability','Callback',strcat(thisfile,'(''optobs'')'));
         uimenu(b,'Label','Optimal &Control','Callback',strcat(thisfile,'(''optsteady'')'));
-
+        
+        b = uimenu(a,'Label','Structural controllability analysis');
+        uimenu(b,'Label','Influence of controllable transitions','Callback',strcat(thisfile,'(''influ'')'));
+        uimenu(b,'Label','Net &rank-controllability test','Callback',strcat(thisfile,'(''nrc'')'));
+        
         b = uimenu(a,'Label','Diagnosis','Callback',strcat(thisfile,'(''diagnosis'')'));
 
         
@@ -1191,6 +1195,32 @@ switch action
         end
         cost = eval(cost);
         SimHPN_OptObs(Pre,Post,lambda,cost);
+        %========================
+        % Influence of the controllable transitions %
+        %========================
+    case 'influ'
+        Pre=eval(get(findobj(gcf,'Tag','Pre'),'String'));
+        Post=eval(get(findobj(gcf,'Tag','Post'),'String'));
+        temp = mat2str([]);
+        Tc =char(inputdlg('Set of controllable transitions:','Tc',1,{temp}));
+%         if isempty(Tc)
+%             return;
+%         end
+        Tc = eval(Tc);
+        SimHPN_Influ(Pre,Post,Tc);
+        %========================
+        % Net rank-controllability test %
+        %========================
+    case 'nrc'
+        Pre=eval(get(findobj(gcf,'Tag','Pre'),'String'));
+        Post=eval(get(findobj(gcf,'Tag','Post'),'String'));
+        temp = mat2str([]);
+        Tc =char(inputdlg('Set of controllable transitions:','Tc',1,{temp}));
+%         if isempty(Tc)
+%             return;
+%         end
+        Tc = eval(Tc);
+        SimHPN_NRC(Pre,Post,Tc);
         %================
         % Optimal steady-state
         %================
