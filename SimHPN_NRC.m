@@ -37,7 +37,7 @@ else
         end
     end
     for j=1:numP
-        if size(find(Pre(j,:)),1)>1
+        if size(find(Pre(j,:)),2)>1
             Pc = [Pc j];
         end
     end
@@ -57,10 +57,10 @@ else
                else
                    pc = [pc 0];
                end  
-               if all(pc)
-                   sc2 = 1;
-               end
-            end
+           end
+           if all(pc)
+                sc2 = 1;
+           end
         end
         
         if sc2==1
@@ -71,7 +71,7 @@ else
             for i=1:size(Tf,2)
                post_tf = find(Post(:,Tf(i)))';
                ppost_tf = [];
-               for j=i:size(post_tf,2)
+               for j=1:size(post_tf,2)
                    ppost_tj = find(Pre(post_tf(j),:));
                    ppost_tf = [ppost_tf ppost_tj];
                end
@@ -81,9 +81,9 @@ else
                else
                    tf = [tf 0];
                end  
-               if all(tf)
+            end
+            if all(tf)
                    sc3 = 1;
-               end
             end
             end
             if sc3==1
