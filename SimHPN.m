@@ -1296,7 +1296,7 @@ switch action
     case 'save_eqlr'
         data = get(gcf,'UserData');
         if isempty(data.E_grph)
-            errordlg('Compute a equilibrium connectivity graph first!');
+            errordlg('Compute an equilibrium connectivity graph first!');
             return;
         end
         checkLabels = {'Save the equilibrium connectivity graph named:' ...
