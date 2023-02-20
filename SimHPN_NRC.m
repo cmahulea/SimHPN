@@ -16,7 +16,7 @@
 %    You should have received a copy of the GNU General Public License
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-function [Flag] = SimHPN_NRC(Pre,Post,Tc)
+function [Flag,sc1,sc2,sc3,Pi,Ti] = SimHPN_NRC(Pre,Post,Tc)
 
 numT = size(Pre,2);
 numP = size(Pre,1);
@@ -91,14 +91,14 @@ else
             end
         end    
     end
-if Flag==1
-        disp('The timed net is NRC')
-elseif sc1==0
-        disp('The net is not NRC')
-else
-        disp('It is not possible to determine if the net is NRC')
-end
-    
+%if Flag==1
+%        disp('The timed net is NRC')
+%elseif sc1==0
+%        disp('The net is not NRC')
+%else
+%        disp('It is not possible to determine if the net is NRC')
+%end
+%    
 end
 
     

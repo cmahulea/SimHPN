@@ -81,14 +81,14 @@ if all(ismember([1:numP],Pi))
     Flag = 1;
 end
 
-disp('The set of influenced nodes are')
-Pi
-Ti
-if Flag==1
-    disp('Influence is total')
-else
-    disp('Influence is not total, thus, the net is not NRC')
-end
+%disp('The set of influenced nodes are')
+%Pi
+%Ti
+%if Flag==1
+%    disp('Influence is total')
+%else
+%    disp('Influence is not total, thus, the set of controllable transitions is not adequate to guarantee net rank-controllability')
+%end
 
 return
 

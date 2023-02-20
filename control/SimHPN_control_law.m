@@ -24,7 +24,7 @@
 % lambda:    Transitions firing rates
 % sampling:  Sampling period
 % m0:        Initial marking
-% inf:       control methods
+% method:       control methods
 %            'onoff': standard ON/OFF controller (only for CF net system)
 %            'onoff_plus': propotional ON/OFF controller
 %            'b_onoff_plus': balanced ON/OFF controller
@@ -43,13 +43,13 @@
 % w:  |T|*(s) matrix, the controlled flow
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [ s, m, u, w ] = SimHPN_control_law( Pre , Post , lambda , m0 , sampling, inf )
+function [ s, m, u, w ] = SimHPN_control_law( Pre , Post , lambda , m0 , sampling, method )
 
 [placeNum, transNum] = size(Pre);
         
 mftemp = []; % fix the final state, for test use.
         
-switch inf
+switch method
     case 'onoff'
         prompt={'The final state Mf:','Firing count vector (if not specified, using the minimal one):'};
         name='ON-OFF Controller';

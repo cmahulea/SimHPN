@@ -110,7 +110,7 @@ switch action
 %        uimenu(b,'Label','&Save results to workspace','Callback',strcat(thisfile,'(''save_control'')'));
 
         b = uimenu(a,'Label','Distributed control', 'Callback',strcat(thisfile,'(''contr_law'',''dmpc'')')); 
-        %uimenu(b,'Label','Decentralized minimum-time for choice-free nets','Callback',strcat(thisfile,'(''contr_law'',''dcenCF'')'));
+        %uimenu(b,'Label','Decentralized minimum-time for choice-free nets','Callback',strcat(thisfile,'(''w'',''dcenCF'')'));
         %uimenu(b,'Label','Distributed MPC','Callback',strcat(thisfile,'(''contr_law'',''dmpc'')'));
         
         b = uimenu(a,'Label','Minimum-time flow control (CF)', 'Callback',strcat(thisfile,'(''contr_law'',''mfc'')')); 
@@ -124,6 +124,9 @@ switch action
         b = uimenu(a,'Label','Structural controllability analysis');
         uimenu(b,'Label','Influence of controllable transitions','Callback',strcat(thisfile,'(''influ'')'));
         uimenu(b,'Label','Net &rank-controllability test','Callback',strcat(thisfile,'(''nrc'')'));
+        uimenu(b,'Label','Equilibrium &connectivity graph','Callback',strcat(thisfile,'(''connect'')'));
+        uimenu(b,'Label','Save Equilibrium connectivity graph to workspace','Callback',strcat(thisfile,'(''save_eqlr'')'));
+        
         
         b = uimenu(a,'Label','Diagnosis','Callback',strcat(thisfile,'(''diagnosis'')'));
 
@@ -654,8 +657,34 @@ switch action
             'Tag', 'tr_type', ...
             'String',' [''c''; ''c'']',...
             'Callback',strcat(thisfile,'(''import_type'')'));
-
-
+        %
+        %boton TC
+        %
+%         fromx=0.66; tox=0.68;
+%         fromy=0.05;toy=0.08;
+%         uicontrol( ...
+%             'Style','text', ...
+%             'Units','normalized', ...
+%             'BackgroundColor',[0.70 0.70 0.70], ...
+%             'ListboxTop',0, ...
+%             'Position',[fromx fromy tox-fromx toy-fromy], ...
+%             'String','Tc:');
+% 
+%         fromx=0.69; tox=0.77;
+%         fromy=0.04;toy=0.08;
+%         uicontrol( ...
+%             'Style','edit', ...
+%             'Units','normalized', ...
+%             'BackgroundColor',[1 1 1], ...
+%             'ListboxTop',0, ...
+%             'Position',[fromx fromy tox-fromx toy-fromy], ...
+%             'HorizontalAlignment','left', ...
+%             'Tag', 'T_c', ...
+%             'String','[1 0]',...
+%             'Callback',strcat(thisfile,'(''import_Tc'')'));
+        %
+        %boton TC
+        %
         set(figpri, 'Visible','on');
         SimHPN('ini_UserData');
 
@@ -667,6 +696,8 @@ switch action
         data.m_c = []; % marking evolution applying a control law
         data.w_c = []; % controlled flow evolution corresponding to a control law
         data.u_c = []; % control corresponding to a control law
+        data.E_grph = []; % equilibrium connectivity graph of a TCPN 
+        data.E_conf = []; % configurations with equilibria of a TCPN
         data.p_semi = []; % contains the p-semiflows
         data.t_semi = []; % contains the t-semiflows
         data.bounds{1} = [];
@@ -1158,8 +1189,8 @@ switch action
         lambda = eval(get(findobj(gcf,'Tag','Lambda'),'String'));
         m0 = eval(get(findobj(gcf,'Tag','M0'),'String'));
         sampling = eval(get(findobj(gcf,'Tag','sampling'),'String'));
-        
-        [ s, m, u, w ] = SimHPN_control_law( Pre , Post , lambda , m0 , sampling, inf );
+        method = varargin{1};
+        [ s, m, u, w ] = SimHPN_control_law( Pre , Post , lambda , m0 , sampling, method );
 
          data = get(gcf,'UserData');
          data.m_c = m;
@@ -1167,7 +1198,7 @@ switch action
          data.w_c = w;
          set(gcf,'UserData',data);
  
-         disp(sprintf('Final marking is reached in %d steps, using %s method',s, inf));        
+         disp(sprintf('Final marking is reached in %d steps, using %s method',s, method));        
     case 'save_control'
         data = get(gcf,'UserData');
         if isempty(data.m_c)
@@ -1207,7 +1238,12 @@ switch action
 %             return;
 %         end
         Tc = eval(Tc);
-        SimHPN_Influ(Pre,Post,Tc);
+        [Pi,Ti,Flag] = SimHPN_Influ(Pre,Post,Tc);
+        if Flag == 0
+            uiwait(msgbox(sprintf('Influence is not total! Therefore, the set of controllable transitions is not adequate to guarantee net rank-controllability. \n \n The influenced nodes are: \n \n Places: %s \n \n Transitions: %s',mat2str(Pi),mat2str(Ti)),'SimHPN Toolbox','modal'));
+        else
+            uiwait(msgbox(sprintf('Influence is total!'),'SimHPN Toolbox','modal'));
+        end
         %========================
         % Net rank-controllability test %
         %========================
@@ -1220,7 +1256,55 @@ switch action
 %             return;
 %         end
         Tc = eval(Tc);
-        SimHPN_NRC(Pre,Post,Tc);
+        [Flag,sc1,sc2,sc3,Pi,Ti] = SimHPN_NRC(Pre,Post,Tc);
+        if Flag == 1
+            uiwait(msgbox(sprintf('The timed net is net rank-controllable.'),'SimHPN Toolbox','modal'));
+        elseif sc1 == 0
+            uiwait(msgbox(sprintf('Influence is not total! Therefore, the set of controllable transitions does not guarantee net rank-controllability. \n \n The only influenced nodes are: \n \n Places: %s \n \n Transitions: %s',mat2str(Pi),mat2str(Ti)),'SimHPN Toolbox','modal'));
+        elseif (sc1 == 1)&&(sc2 == 0)
+            uiwait(msgbox(sprintf('It is not possible to decide if the timed net is net rank-controllable. \n The condition related to the choice places is not fulfilled'),'SimHPN Toolbox','modal'));
+        elseif (sc1 == 1)&&(sc2 == 1)&&(sc3 == 0)
+            uiwait(msgbox(sprintf('It is not possible to decide if the timed net is net rank-controllable. \n The condition related to the fork transitions is not fulfilled'),'SimHPN Toolbox','modal'));
+        end
+        %========================
+        % Equilibrium Connecivity Graph %
+        %========================
+    case 'connect'
+        Pre=eval(get(findobj(gcf,'Tag','Pre'),'String'));
+        Post=eval(get(findobj(gcf,'Tag','Post'),'String'));
+        lambda = eval(get(findobj(gcf,'Tag','Lambda'),'String'));
+        m0 = eval(get(findobj(gcf,'Tag','M0'),'String'));
+        temp = mat2str([]);
+        Tc =char(inputdlg('Set of controllable transitions:','Tc',1,{temp}));
+%         if isempty(Tc)
+%             return;
+%         end
+        L = diag(lambda);
+        Tc = eval(Tc);
+        [G,Keq,flag] = SimHPN_ConnectivityTest(Pre,Post,Tc,L,m0)
+        
+        data = get(gcf,'UserData');
+        data.E_grph = G;
+        data.E_conf = Keq;
+        set(gcf,'UserData',data);
+        
+        if flag == 1
+            uiwait(msgbox(sprintf('The set of equilibrium markings in all the regions is connected.'),'SimHPN Toolbox','modal'));
+        else
+            uiwait(msgbox(sprintf('The set of equilibrium markings in all the regions is not connected.'),'SimHPN Toolbox','modal'));
+        end
+    case 'save_eqlr'
+        data = get(gcf,'UserData');
+        if isempty(data.E_grph)
+            errordlg('Compute a equilibrium connectivity graph first!');
+            return;
+        end
+        checkLabels = {'Save the equilibrium connectivity graph named:' ...
+            'Save the set of configurations with equilibria named:'};
+        varNames = {'E_grph', 'E_conf'};
+        items = {data.E_grph, data.E_conf};
+        export2wsdlg(checkLabels, varNames, items, 'Save Equilibrium connecivity graph to workspace');
+        
         %================
         % Optimal steady-state
         %================
