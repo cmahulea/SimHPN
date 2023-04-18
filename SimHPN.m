@@ -85,7 +85,7 @@ switch action
 
                 
                 
-        a = uimenu('Label','Discrete');
+        %a = uimenu('Label','Discrete');
         
         a = uimenu('Label','Continuous');
         b = uimenu(a,'Label','Compute bounds','Callback',strcat(thisfile,'(''bounds'')'));
@@ -96,10 +96,10 @@ switch action
         uimenu(menuCtrOnoff,'Label','Standard ON/OFF','Callback',strcat(thisfile,'(''contr_law'',''onoff'')'));
         uimenu(menuCtrOnoff,'Label','ON/OFF-plus','Callback',strcat(thisfile,'(''contr_law'',''onoff_plus'')'));
         uimenu(menuCtrOnoff,'Label','Balanced ON/OFF','Callback',strcat(thisfile,'(''contr_law'',''b_onoff'')'));
-        uimenu(menuCtrOnoff,'Label','MPC-ON/OFF','Callback',strcat(thisfile,'(''contr_law'',''mpc_onoff'')'));
+        %uimenu(menuCtrOnoff,'Label','MPC-ON/OFF','Callback',strcat(thisfile,'(''contr_law'',''mpc_onoff'')'));
         %uimenu(menuCtrOnoff,'Label','MPC-ON-OFF2','Callback',strcat(thisfile,'(''contr_law'',''mpc_onoff2'')'));
         
-        uimenu(b,'Label','MPC','Callback',strcat(thisfile,'(''contr_law'',''mpc'')'));
+        %uimenu(b,'Label','MPC','Callback',strcat(thisfile,'(''contr_law'',''mpc'')'));
         uimenu(b,'Label','Approaching Min. Time','Callback',strcat(thisfile,'(''contr_law'',''appMin'')'));
         uimenu(b,'Label','Affine Control','Callback',strcat(thisfile,'(''contr_law'',''affCtrl'')'));
         uimenu(b,'Label','Mininum-time Control Laws','Callback',strcat(thisfile,'(''contr_law'',''minT'')'));        
@@ -109,7 +109,7 @@ switch action
 %        uimenu(b,'Label','&Control law','Callback',strcat(thisfile,'(''contr_law'')'));
 %        uimenu(b,'Label','&Save results to workspace','Callback',strcat(thisfile,'(''save_control'')'));
 
-        b = uimenu(a,'Label','Distributed control', 'Callback',strcat(thisfile,'(''contr_law'',''dmpc'')')); 
+        %b = uimenu(a,'Label','Distributed control', 'Callback',strcat(thisfile,'(''contr_law'',''dmpc'')')); 
         %uimenu(b,'Label','Decentralized minimum-time for choice-free nets','Callback',strcat(thisfile,'(''w'',''dcenCF'')'));
         %uimenu(b,'Label','Distributed MPC','Callback',strcat(thisfile,'(''contr_law'',''dmpc'')'));
         

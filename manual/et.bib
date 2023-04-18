@@ -7087,3 +7087,81 @@ keywords = "Hybrid systems"
 
 
 
+
+@phdthesis{thesis_Petri,
+  author =  "C.A. Petri",
+  title =   "Kommunikation mit Automaten (Communication with Automata)",
+  booktitle = "PhD thesis",
+  year =    "1962",
+  notes="(in german)",
+  school  = {Bonn: Institut f{\"u}r Instrumentelle Mathematik, Schriften des IIM Nr. 2},
+  note    = {Second Edition:, New York: Griffiss Air Force Base, Technical
+             Report RADC-TR-65--377, Vol.1, 1966, Pages: Suppl. 1,
+             English translation},
+}
+
+@phdthesis{AffineLawThesisRenato,
+  author  = "Vazquez Topete,  Carlos Renato",
+  title   = {Fluidization, Controllability and Control of Timed continuous {P}etri Nets},
+  school  = {Universidad de Zaragoza},
+  year    = {2011},
+  url = {https://zaguan.unizar.es/record/6214},
+  month   = {06},
+
+}
+
+
+@INPROCEEDINGS{MinTimeControlCF,
+  author={Wang, Liewei and Mahulea, Cristian and Silva, Manuel},
+  booktitle={2013 European Control Conference (ECC)}, 
+  title={Minimum-time flow control of timed continuous Choice-Free nets}, 
+  year={2013},
+  volume={},
+  number={},
+  pages={137-142},
+  doi={10.23919/ECC.2013.6669548}}
+
+
+@article{ONOFFmethodsWANG2014,
+title = {ON/OFF strategy based minimum-time control of continuous Petri nets},
+journal = {Nonlinear Analysis: Hybrid Systems},
+volume = {12},
+pages = {50-65},
+year = {2014},
+issn = {1751-570X},
+doi = {https://doi.org/10.1016/j.nahs.2013.11.007},
+url = {https://www.sciencedirect.com/science/article/pii/S1751570X13000642},
+author = {Liewei Wang and Cristian Mahulea and Jorge Júlvez and Manuel Silva},
+keywords = {Discrete-event systems, Continuous Petri nets, ON/OFF control, Minimum-time control},
+abstract = {This paper focuses on the target marking control problem of timed continuous Petri nets (TCPN), aiming to drive the system from an initial state to a desired final one. This problem is similar to the set-point control problem in a general continuous-state system. In a previous work, a simple and efficient ON/OFF controller was proposed for Choice-Free nets, and it was proved to be minimum-time (Wang, 2010). However, for general TCPN the ON/OFF controller may bring the system to ?blocking? situations due to its ?greedy? firing strategy, and the convergence to the final state is not ensured. In this work the ON/OFF controller is extended to general TCPN by adding more ?fair? strategies to solve conflicts in the system: the ON/OFF+ controller is obtained by forcing proportional firings of conflicting transitions. Nevertheless, such kind of controller might highly slow down the system when transitions have flows of different orders of magnitude, therefore a balancing process is introduced, leading to the B-ON/OFF controller. A third approach introduced here is the MPC-ON/OFF controller, a combination of Model Predictive Control (MPC) and the ON/OFF strategy; it may achieve a smaller number of time steps for reaching the final states, but usually requires more CPU time for computing the control laws. All the proposed extensions are heuristic methods for the minimum-time control and their convergences are proved. Finally, an application example of a manufacturing cell is considered to illustrate the methods. It is shown that by using the proposed controllers, reasonable numbers of time steps for reaching the final state can be obtained with low computational complexity.}
+}
+
+@article{ApproachingMinTimeAPAYDINOZKAN2011,
+title = {Approaching minimum time control of timed continuous Petri nets},
+journal = {Nonlinear Analysis: Hybrid Systems},
+volume = {5},
+number = {2},
+pages = {136-148},
+year = {2011},
+note = {Special Issue related to IFAC Conference on Analysis and Design of Hybrid Systems (ADHS?09)},
+issn = {1751-570X},
+doi = {https://doi.org/10.1016/j.nahs.2010.04.002},
+url = {https://www.sciencedirect.com/science/article/pii/S1751570X1000021X},
+author = {Hanife Apaydin-Özkan and Jorge Júlvez and Cristian Mahulea and Manuel Silva},
+keywords = {Timed continuous Petri nets, Minimum time control, Piecewise linear trajectory},
+abstract = {This paper considers the problem of controlling timed continuous Petri nets under infinite server semantics. The proposed control strategy assigns piecewise constant flows to transitions in order to reach the target state. First, by using linear programming, a method driving the system from the initial to the target state through a linear trajectory is developed. Then, in order to improve the time of the trajectory, intermediate states are added by means of bilinear programming. Finally, in order to handle potential perturbations, we develop a closed loop control strategy that follows the trajectory computed by the open loop control by calculating a new state after each time step. The algorithms developed here are applied to a manufacturing system.}
+}
+
+
+@INPROCEEDINGS{minTime,
+  author={Wang, Liewei and Mahulea, Cristian and Júlvez, Jorge and Silva, Manuel},
+  booktitle={49th IEEE Conference on Decision and Control (CDC)}, 
+  title={Minimum-time control for structurally persistent continuous Petri Nets}, 
+  year={2010},
+  volume={},
+  number={},
+  pages={2771-2776},
+  doi={10.1109/CDC.2010.5717999}}
+
+
+
