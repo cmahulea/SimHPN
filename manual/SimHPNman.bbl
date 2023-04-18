@@ -1,0 +1,153 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{DHP{\etalchar{+}}93}
+
+\bibitem[AD98]{ARAlDa98}
+H.~Alla and R.~David.
+\newblock Continuous and hybrid {Petri} nets.
+\newblock {\em Journal of Circuits, Systems, and Computers}, 8(1):159--188,
+  1998.
+
+\bibitem[BMG00]{ARBaMeGi00}
+F.~Balduzzi, G.~Menga, and A.~Giua.
+\newblock First-order hybrid {P}etri nets: a model for optimization and
+  control.
+\newblock {\em IEEE Trans. on Robotics and Automation}, 16(4):382--399, 2000.
+
+\bibitem[CSK{\etalchar{+}}03]{IPChShKi03}
+K.-H. Cho, S.-Y. Shin, H.-W. Kim, O.~Wolkenhauer, B.~McFerran, and W.~Kolch.
+\newblock Mathematical modeling of the influence of rkip on the erk signaling
+  pathway.
+\newblock In Corrado Priami, editor, {\em Computational Methods in Systems
+  Biology}, volume 2602 of {\em Lecture Notes in Computer Science}, pages
+  127--141. Springer Berlin, Heidelberg, 2003.
+
+\bibitem[DA10]{BODavid10}
+R.~David and H.~Alla.
+\newblock {\em {Discrete, Continuous and Hybrid Petri Nets}}.
+\newblock Springer-Verlag, 2010.
+\newblock $2^{nd}$ edition.
+
+\bibitem[DHP{\etalchar{+}}93]{BODHPSV93}
+F.~DiCesare, G.~Harhalakis, J.~M. Proth, M.~Silva, and F.~B. Vernadat.
+\newblock {\em Practice of {Petri} Nets in Manufacturing}.
+\newblock Chapman \& Hall, 1993.
+
+\bibitem[GJ79]{SCP79}
+M.R. Garey and D.S. Johnson.
+\newblock {\em Computers and Interactability: A Guide to the Theory of
+  NP-Completeness}.
+\newblock W. H. Freeman and Company, 1979.
+
+\bibitem[HGD08]{InHeGiDo08}
+M.~Heiner, D.~Gilbert, and R.~Donaldson.
+\newblock Petri nets for systems and synthetic biology.
+\newblock In M.~Bernardo, P.~Degano, and G.~Zavattaro, editors, {\em Formal
+  Methods for Computational Systems Biology}, Lecture Notes in Computer
+  Science, pages 215--264. Springer Berlin, Heidelberg, 2008.
+
+\bibitem[JM10]{JuMa10}
+J.~J\'ulvez and C.~Mahulea.
+\newblock {SimHPN: a MATLAB toolbox for continuous Petri nets}.
+\newblock In {\em Proc. of the $10^{th}$ Workshop on Discrete Event Systems},
+  pages 24--29, Berlin, Germany, August 2010.
+
+\bibitem[JMV11]{JuMaVa11}
+J.~J\'ulvez, C.~Mahulea, and C.R. V\'azquez.
+\newblock {Analysis and Simulation of Manufacturing Systems using SimHPN
+  toolbox}.
+\newblock In {\em Proc. of the 7th IEEE Conf. on Automation Science and
+  Engineering}, pages 432--437, Trieste, Italy, August 2011.
+
+\bibitem[JMV12]{simhpn2012806}
+Jorge J\'ulvez, Cristian Mahulea, and Carlos-Renato V\'azquez.
+\newblock Simhpn: A matlab toolbox for simulation, analysis and design with
+  hybrid petri nets.
+\newblock {\em Nonlinear Analysis: Hybrid Systems}, 6(2):806 -- 817, 2012.
+
+\bibitem[JRS05]{ARJuReSi05}
+J.~J\'ulvez, L.~Recalde, and M.~Silva.
+\newblock Steady-state performance evaluation of continuous {mono-T-semiflow
+  Petri} nets.
+\newblock {\em Automatica}, 41(4):605--616, 2005.
+
+\bibitem[MMP03]{IPMaMaPa03c}
+M.~Matcovschi, C.~Mahulea, and O.~Pastravanu.
+\newblock Petri {N}et {T}oolbox for {MATLAB}.
+\newblock In {\em $11^{th}$ IEEE Mediterranean Conference on Control and
+  Automation MED'03}, Rhodes, Greece, July 2003.
+
+\bibitem[MRRS08]{ARMaRaReSi08}
+C.~Mahulea, A.~Ram\'{i}rez, L.~Recalde, and M.~Silva.
+\newblock Steady state control reference and token conservation laws in
+  continuous {P}etri net systems.
+\newblock {\em IEEE Trans. on Autom. Science and Engineering}, 5(2):307--320,
+  2008.
+
+\bibitem[MRS09]{ARMARESI09}
+C.~Mahulea, L.~Recalde, and M.~Silva.
+\newblock {Basic Server Semantics and Performance Monotonicity of Continuous
+  Petri Nets}.
+\newblock {\em Discrete Event Dynamic Systems: Theory and Applications},
+  19(2):189 -- 212, June 2009.
+
+\bibitem[MSCS12]{ARMASECASI12}
+C.~Mahulea, C.~Seatzu, M.P. Cabasino, and M.~Silva.
+\newblock {Fault Diagnosis of Discrete-Event Systems using Continuous Petri
+  Nets}.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics, Part A:
+  Systems and Humans}, 2012.
+\newblock in press.
+
+\bibitem[Mur89]{ARMura89}
+T.~Murata.
+\newblock {Petri} nets: Properties, analysis and applications.
+\newblock {\em Proceedings of the IEEE}, 77(4):541--580, 1989.
+
+\bibitem[SGS08]{ICSeGiSe08}
+F.~Sessego, A.~Giua, and C.~Seatzu.
+\newblock {HYPENS: a Matlab tool for timed discrete, continuous and hybrid
+  Petri nets}.
+\newblock In {\em Application and Theory of {P}etri Nets 2008}, volume 5062 of
+  {\em Lecture Notes in Computer Science}, pages 419--428. Springer-Verlag,
+  2008.
+
+\bibitem[Sil85]{BOSilv85}
+M.~Silva.
+\newblock {\em Las Redes de {P}etri: en la Autom\'{a}tica y la
+  Inform\'{a}tica}.
+\newblock AC, 1985.
+
+\bibitem[SR00]{IPSiRe00}
+M.~Silva and L.~Recalde.
+\newblock R\'{e}seaux de {Petri} et relaxations de l'integralit\'{e}: Une
+  vision des r\'{e}seaux continus.
+\newblock In {\em Conf\'{e}rence Internationale Francophone d'Automatique (CIFA
+  2000)}, pages 37--48, 2000.
+
+\bibitem[SR02]{ARSiRe02}
+M.~Silva and L.~Recalde.
+\newblock Petri nets and integrality relaxations: A view of continuous {Petri}
+  nets.
+\newblock {\em IEEE Trans. on Systems, Man, and Cybernetics}, 32(4):314--327,
+  2002.
+
+\bibitem[VSBS10]{IPVaSuBoSi10}
+C.R. V{\'a}zquez, H.Y. Sutarto, R.~Boel, and M.~Silva.
+\newblock Hybrid petri net model of a traffic intersection in an urban network.
+\newblock In {\em 2010 IEEE Multiconference on Systems and Control}, Yokohama,
+  Japan, 09/2010 2010.
+
+\bibitem[ZK95]{IPZiKn95}
+A.~Zimmermann and M.~Knoke.
+\newblock {TimeNETsim - a parallel simulator for stochastic Petri nets}.
+\newblock In {\em Proc. 28th Annual Simulation Symposium}, pages 250--258,
+  Phoenix, AZ, USA, 1995.
+
+\bibitem[ZRS01]{ZRS-JIM-01}
+A.~Zimmermann, D.~Rodr\'{i}guez, and M.~Silva.
+\newblock {A Two Phase Optimisation Method for Petri Net Models of
+  Manufacturing Systems}.
+\newblock {\em Journal of Intelligent Manufacturing}, 12(5):421--432, October
+  2001.
+
+\end{thebibliography}
