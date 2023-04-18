@@ -5,32 +5,20 @@
 \contentsline {section}{\numberline {3.2}Timed Hybrid Petri net systems}{9}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Using SimHPN}{11}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Short description of the GUI}{11}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Script simulation}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Analysing and design tools for continuous systems}{18}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Compute bounds}{18}{subsection.4.3.1}%
-\contentsline {subsubsection}{ON/OFF Methods}{18}{section*.2}%
-\contentsline {subsubsection}{MPC}{18}{section*.3}%
-\contentsline {subsubsection}{Approaching Minimum time}{18}{section*.4}%
-\contentsline {subsubsection}{Affine control}{18}{section*.5}%
-\contentsline {subsubsection}{Minimum-time control law}{18}{section*.6}%
-\contentsline {subsection}{\numberline {4.3.2}Centralized control}{18}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Distributed control}{18}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Minimum-time flow control (CF)}{18}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Optimal}{18}{subsection.4.3.5}%
-\contentsline {subsubsection}{Optimal observability}{18}{section*.7}%
-\contentsline {subsubsection}{Optimal control}{18}{section*.8}%
-\contentsline {subsection}{\numberline {4.3.6}Structural controllability analysis}{18}{subsection.4.3.6}%
-\contentsline {subsubsection}{Influence of controllable transitions}{18}{section*.9}%
-\contentsline {subsubsection}{Net rank-controllability test}{18}{section*.10}%
-\contentsline {subsubsection}{Equilibrium connectivity graph}{18}{section*.11}%
-\contentsline {subsubsection}{Save Equilibrium connectivity graph to workspace}{18}{section*.12}%
-\contentsline {subsection}{\numberline {4.3.7}Diagnosis}{18}{subsection.4.3.7}%
-\contentsline {chapter}{\numberline {5}Examples of utilization}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}An assembly line}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}A traffic system}{22}{section.5.2}%
-\contentsline {section}{\numberline {5.3}A biochemical system}{24}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Fault Diagnosis with continuous Petri nets}{26}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Example 1}{26}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Example 2: (a manufacturing system)}{29}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Example 3: (unobservable acyclic subnet)}{31}{subsection.5.4.3}%
-\contentsline {chapter}{Bibliography}{36}{figure.5.8}%
+\contentsline {section}{\numberline {4.2}Analysis and design tools}{14}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Structural controllability analysis}{15}{subsection.4.2.1}%
+\contentsline {subsubsection}{Influence of controllable transitions}{15}{section*.2}%
+\contentsline {subsubsection}{Net rank-controllability test}{16}{section*.3}%
+\contentsline {subsubsection}{Equilibrium connectivity graph}{16}{section*.4}%
+\contentsline {subsection}{\numberline {4.2.2}Diagnosis}{16}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Script simulation}{17}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Examples of utilization}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}An assembly line}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}A traffic system}{24}{section.5.2}%
+\contentsline {section}{\numberline {5.3}A biochemical system}{26}{section.5.3}%
+\contentsline {section}{\numberline {5.4}A Kanban-like flexible manufacturing system}{28}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Fault Diagnosis with continuous Petri nets}{32}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Example 1}{32}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Example 2: (a manufacturing system)}{35}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Example 3: (unobservable acyclic subnet)}{35}{subsection.5.5.3}%
+\contentsline {chapter}{Bibliography}{42}{figure.5.11}%
