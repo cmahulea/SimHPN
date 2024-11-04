@@ -116,7 +116,7 @@ while ~isequal((m >= minMark - 1e-6 * ones(PlaceNum,1)), ones(PlaceNum,1))
                 reFv(j) = reFv(j) - w(j) * delta;
             else
                 ind = find(Pre(:, j));
-                if isequal(m(ind) > minMark(ind), ones(size(ind),1) )  
+                if isequal(m(ind) > minMark(ind), ones(size(ind,1),1) )  
                     difMark = m(ind) - minMark(ind);
                     Preind = Pre(ind, j);
                     w(j) = min(min(difMark ./ (Preind * delta)), flow(j));                

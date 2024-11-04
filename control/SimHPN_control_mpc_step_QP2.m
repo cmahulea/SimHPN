@@ -67,8 +67,8 @@ for (i = 1 : N)
     CST_1_tmp = blkdiag(CST_1_tmp, eye(placeNum));
     CST_2 = blkdiag(CST_2, delta * C);
 end 
-CST_1 = [-1 * CST_1_tmp, zeros(size(CST_1_tmp), placeNum)] + [zeros(size(CST_1_tmp), placeNum), CST_1_tmp];
-
+%CST_1 = [-1 * CST_1_tmp, zeros(size(CST_1_tmp), placeNum)] + [zeros(size(CST_1_tmp), placeNum), CST_1_tmp];
+CST_1 = [-1 * CST_1_tmp, zeros(size(CST_1_tmp,1), placeNum)] + [zeros(size(CST_1_tmp,1), placeNum), CST_1_tmp];
 Aeq_1 = [CST_1, -1 * CST_2];
 Beq_1 = [];
 for i = 1 : N

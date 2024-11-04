@@ -27,7 +27,7 @@ C = Post - Pre;
 A = eye(placeNum);
 B = C * delta;
 
-[P, L, G] = dare(A,B,Q,R);
-
+%[P, L, G] = dare(A,B,Q,R);
+[P, L, G] = idare(A,B,Q,R);
 
 

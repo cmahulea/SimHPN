@@ -272,6 +272,81 @@ As discussed in~\cite{IPChShKi03}, intensive simulations can be used to
 perform sensitivity analysis with respect to the variation of initial conditions.
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{A Kanban-like flexible manufacturing system}
+
+
+Here, we consider the Kanban-like flexible manufacturing system (FMS) consisting of two workflows that are attended by a pool of three machines (see Fig. \ref{fig:layoutFINAL}), to perform a structural controllability analysis. A TCPN that models the system is presented in Fig. \ref{fig:FMSPN} (this model is available in the models folder as Model\_FMS\_3.mat). It has 216 configurations and 11 transitions, each one representing one of the following events:
+\begin{itemize}
+    \item Loading of material to the machines ($t_1,t_3,t_5,t_7,t_9$).
+    \item Unloading of the processed material to be stored in a buffer ($t_2,t_4,t_6,t_8,t_{10}$).
+    \item Removing parts from the system output ($t_{11}$).
+\end{itemize}
+The timing of the net is given by $\lambda = \left [1 \ \frac{1}{3} \ 1 \ \frac{1}{4} \ 1 \ \frac{1}{3} \ 1 \ \frac{1}{5} \ 1 \ \frac{1}{5} \ 1 \right ]^T$. 
+We work based on the assumption that machines are consistently working at their nominal speed and are freed up as soon as the material is processed. As a result, we have identified $T_{nc}=\{t_2,t_4,t_6,t_8,t_{10}\}$. The remaining events are controllable because it is possible to decide when to use a specific machine to process a particular piece, and we can always empty the output buffer. This leads to $T_c$ being $T_{c}=\{t_1,t_3,t_5,t_7,t_{9},t_{11}\}$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=.6]{figs/FinalExampleLayout2.eps}
+    \caption{A Kanban-like flexible manufacturing system. and its production process.}
+    \label{fig:layoutFINAL}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=.75]{figs/FMS.eps}
+    \caption{A TCPN system that models the FMS of Fig \ref{fig:layoutFINAL}. The controllable transitions are depicted as black transitions.}
+    \label{fig:FMSPN}
+\end{figure}
+
+\textbf{Net rank-controllability analysis:} Once the model has been loaded, the test can be carried out by selecting \textit{Continuous} $\rightarrow$ \textit{Structural controllability analysis} $\rightarrow$ \textit{Net rank-controllability test}. We present 3 cases:\\
+${\bullet}$ $T_c = \{t_1,t_5\}$: We enter this set of controllable transitions on the pop-up windows as $[1 \ 5]$ and we obtain the message \\``\textit{Influence is not total! Therefore, the set of controllable transitions does not guarantee net rank-controllability. The only influenced nodes are:}
+\textit{Places = [1 2 3 4 5 6 7 8 9 10 11 12 17 18]}
+\textit{Transitions = [1 2 3 4 5 6 7 8]}'' \\This means that, since the property of influence does not hold, then there are configurations in which the net is not rank-controllable.\\
+${\bullet}$ $T_c = \{t_1,t_5,t_9,t_{11}\}$ By entering this set of controllable transitions as $[1 \ 5 \ 9 \ 11]$ we obtain the message \\``\textit{It is not possible to decide if the timed net is net rank-controllable. The condition related to the choice places is not fulfilled.}''. \\In this case the test cannot conclude if the system is NRC, since one of the sufficient conditions does not hold. In particular, the one related to the choice places. This serves to give indications to the operator/researcher about where the problem may be in order to guarantee controllability.\\
+${\bullet}$ $T_c = \{t_1,t_3,t_5,t_7,t_9,t_{11}\}$: Here we choose the set that we will consider in our case study, which is such that it satisfies all the structural conditions for controllability and is indicated by the message:
+``\textit{The timed net is net rank-controllable.}''.
+
+From the previous analysis, we conclude that the system is NRC. Moreover, this system is a live and bounded TCPN. Therefore, $T_c$ also guarantees that the system will be controllable over its connected sets of equilibrium markings.\\ % For instance, in [14], we have shown how to apply control laws designed for a TCPN into the corresponding Markovian Petri net system.  Once a control law has been designed for a T CP N system, it can be used for controlling the marking of the original discrete net [4
+
+
+\textbf{Equilibrium connectivity graph: } This routine can be used to calculate the equilibrium connectivity graph of a system by selecting the menu \textit{Continuous} $\rightarrow$ \textit{Structural controllability analysis} $\rightarrow$ \textit{Equilibrium connectivity graph} and entering the set of controllable transitions as the input. Each node of the resulting graph represents a configuration of the system whose region contains equilibrium markings, and the edges indicate the connection between the equilibrium markings of the different regions. This provides insights into the controllability of the system, showing the sets of equilibrium points where the controllability property holds. 
+
+
+Using this routine and selecting the set of controllable transitions $[1 \ 3 \ 5 \ 7 \ 9 \ 11]$, a matrix E\_conf is obtained. Each row of this matrix represents a configuration of the system in which equilibrium markings are present in the corresponding regions. For this particular case, the results are the following:
+
+
+E\_conf =\\
+     1     2     3     4     7     8     9    10    13    14    16   (node 1) \qquad
+     1     2     3     4     7     8     9    10    13    15    16   (node 2)\\
+     1     2     3     4    18     8     9    10    12    14    16 (node 3) \qquad
+     1     2     3     4    18     8     9    10    12    15    16 (node 4)\\
+     1     2     3     4    18     8     9    10    13    14    16 (node 5)\qquad
+     1     2     3     4    18     8     9    10    13    15    16 (node 6)\\
+    17     2     3     4     7     8     9    10    11    14    16 (node 7)\qquad
+    17     2     3     4     7     8     9    10    11    15    16 (node 8)\\
+    17     2     3     4     7     8     9    10    13    14    16 (node 9)\qquad
+    17     2     3     4     7     8     9    10    13    15    16 (node 10)\\
+    17     2     3     4    18     8     9    10    11    14    16 (node 11)\qquad
+    17     2     3     4    18     8     9    10    11    15    16 (node 12)\\
+    17     2     3     4    18     8     9    10    12    14    16 (node 13)\qquad
+    17     2     3     4    18     8     9    10    12    15    16 (node 14)\\
+    17     2     3     4    18     8     9    10    13    14    16 (node 15)\qquad
+    17     2     3     4    18     8     9    10    13    15    16 (node 16)\\
+
+For instance, the region corresponding to the configuration $\mathcal{C}_1 = \{(p_1,t_1),(p_2,t_2),(p_3,t_3),(p_4,t_4),(p_7,t_5),(p_8,t_6),(p_9,t_7),(p_{10},t_8),(p_{13},t_9)$, $(p_{14},t_{10}),(p_{16},t_{11})\}$ (node 1) contains equilibria. Furthermore, the routine generates a variable-type graph called E\_graph, which has 16 nodes and 76 edges, representing the connectivity of the equilibrium sets. This graph can be plotted (as in Fig. \ref{fig:my_label}), providing a visual representation of the equilibrium connectivity of the system. For this particular case, the equilibrium sets in all the regions are connected, meaning that the system exhibits the controllability property over all of its equilibrium markings. 
+
+
+\begin{figure}
+    \centering
+    \includegraphics{figs/E_graph.eps}
+    \caption{Equilibrium connectivity graph of the FMS system. Each node corresponds to a single region of the TCPN system in which it contains equilibrium markings.}
+    \label{fig:my_label}
+\end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fault Diagnosis with continuous Petri nets}
 \label{sec:fdsexamps}

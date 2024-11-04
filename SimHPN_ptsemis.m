@@ -116,6 +116,16 @@ end
 
 % División de todos los semiflujos por el máximo común divisor
 
+%Hay un problema porque aquí llegan tsemis/psemis que pueden contener
+%entradas menores a 1. Luego, el comando gcd no funciona. Normalizo para
+% evitar esto.
+for k=1:size(csemi,1)
+    k_row = csemi(k,:);
+    csemi(k,:)=csemi(k,:)/min(k_row(k_row>0));
+end
+
+%
+
 for i=1:size(csemi,1)
     mcd=csemi(i,1);
     for j=2:size(csemi,2)
